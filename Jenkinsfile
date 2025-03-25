@@ -74,7 +74,7 @@ pipeline {
         }
         stage('Trivy Image Scan') {
             steps {
-                sh "trivy image --format table -o image-report.html felix081/webapp:$IMAGE_TAG" 
+                sh "trivy image --format table -o image-report.html felix081/webapp:$IMAGE_TAG"  
             }
         }
         stage('Docker push') {
