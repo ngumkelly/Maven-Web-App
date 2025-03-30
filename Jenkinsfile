@@ -66,22 +66,22 @@ pipeline {
         stage('Docker Build and tag') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
-                        sh "docker build -t felix081/webapp:$IMAGE_TAG ."
+                    withDockerRegistry(credentialsId: 'docker-cred2', toolName: 'docker') {
+                        sh "docker build -t kelly09/webapp:$IMAGE_TAG ."
                     }
                 }
             }
         }
         stage('Trivy Image Scan') {
             steps {
-                sh "trivy image --format table -o image-report.html felix081/webapp:$IMAGE_TAG"  
+                sh "trivy image --format table -o image-report.html kelly09/webapp:$IMAGE_TAG"  
             }
         }
         stage('Docker push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
-                        sh "docker push felix081/webapp:$IMAGE_TAG"
+                    withDockerRegistry(credentialsId: 'docker-cred2', toolName: 'docker') {
+                        sh "docker push kelly09/webapp:$IMAGE_TAG"
                     }
                 }
             }
