@@ -22,7 +22,7 @@ pipeline {
         stage('Compile') {
             steps {
                 sh "mvn compile"
-            }
+            } 
         }
         stage('Test') {
             steps {
