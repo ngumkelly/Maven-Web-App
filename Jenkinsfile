@@ -27,7 +27,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh "mvn test"
-            }
+            } 
         }
         stage('Trivy FS') {
             steps {
