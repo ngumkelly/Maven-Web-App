@@ -12,7 +12,7 @@ pipeline {
         stage('Clean Workspace') {
             steps {
                 cleanWs()
-            }
+            } 
         }
         stage('Checkout from Github') {
             steps {
