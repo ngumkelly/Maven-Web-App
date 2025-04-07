@@ -7,6 +7,8 @@ pipeline {
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
         IMAGE_TAG = "v${BUILD_NUMBER}"
+        AWS_REGION = "us-east-1"
+        CLUSTER_NAME = 'devopsola-cluster'
     }
     stages {
         stage('Clean Workspace') {
@@ -86,5 +88,32 @@ pipeline {
                 }
             }
         }
+        stage('Deploy to EKS with kubectl') {
+            steps {
+                withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: 'aws-cred',
+                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                    sh '''
+                        echo "Updating kubeconfig for EKS..."
+                        aws eks update-kubeconfig --region $AWS_REGION --name $CLUSTER_NAME
+
+                        echo "Replacing image tag in deployment.yaml..."
+                        sed "s|IMAGE_TAG|$IMAGE_TAG|g" deployment.yaml > deployment-temp.yaml
+
+                        echo "Applying Kubernetes manifests..."
+                        kubectl apply -f deployment-temp.yaml
+                        kubectl apply -f service.yaml
+
+                        echo "Checking deployment rollout..."
+                        kubectl rollout status deployment/web-app
+                    '''
+                }
+            }
+        }
+    }
+}
     }
 }
