@@ -16,4 +16,4 @@ spec:
       - name: web-app
         image: "kelly09/webapp:IMAGE_TAG"
         ports:
-        - containerPort: 80
+        - containerPort: 8080
