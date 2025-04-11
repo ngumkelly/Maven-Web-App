@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: web-app
-        image: kelly09/webapp:${IMAGE_TAG}
+        image: "kelly09/webapp:IMAGE_TAG"
         ports:
         - containerPort: 8080
         resources:
