@@ -8,7 +8,7 @@ pipeline {
         SCANNER_HOME = tool 'sonar-scanner'
         IMAGE_TAG = "v${BUILD_NUMBER}"
         AWS_REGION = "us-east-1"
-        CLUSTER_NAME = 'devopsola-cluster'
+        CLUSTER_NAME = 'my-web-cluster'
     }
     stages {
         stage('Clean Workspace') {
