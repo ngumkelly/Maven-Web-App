@@ -5,13 +5,13 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to the landing page of Solavise Technologies Institute.</h1>
+<h1 align="center">Welcome to Solavise Technologies Institute.</h1>
 <h1 align="center">Solavise Technologies Institute is developing and supporting quality Software Solutions to millions of clients globally.
 	           We are raising billionaires IT professionals accross the nations of the World.
 	Solavise Technologies Institute offers Training for AWS Cloud, DevOps with Linux, Kubernetes and Data Science & Machine Learning, equipping IT Engineers for best performance.
         Solavise Technologies Institute, the Pride of Africa.
-	We just started a new batch August 2024.
-        Our next batch will will start on October 2024.
+	We just started a new batch The Champion Batch.
+        Our next batch will will start on October 2025.
         Please invite all your contacts and friends for this life changing course.
 </h1>
 <div style="text-align: center;">
