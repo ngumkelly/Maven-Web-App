@@ -7,7 +7,7 @@
 <body>
 <h1 align="center">Welcome to Solavise Technologies Institute.</h1>
 <h1 align="center">Solavise Technologies Institute is developing and supporting quality Software Solutions to millions of clients globally.
-	           We are raising billionaires IT professionals accross the nations of the World.
+	           We are really raising billionaires IT professionals accross the nations of the World.
 	Solavise Technologies Institute offers Training for AWS Cloud, DevOps with Linux, Kubernetes and Data Science & Machine Learning, equipping IT Engineers for best performance.
         Solavise Technologies Institute, the Pride of Africa.
 	We just started a new batch The Champion Batch.
