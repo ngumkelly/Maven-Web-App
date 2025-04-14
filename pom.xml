@@ -95,13 +95,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>SolaviseTech Releases Nexus Repository</name>
-	      <url>http://54.234.55.72:8081/repository/maven-releases/</url>
+	      <url>http://3.92.66.247:8081/repository/maven-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>SolaviseTech Snapshot Nexus Repository </name>
-	      <url>http://54.234.55.72:8081/repository/maven-snapshots/</url>
+	      <url>http://3.92.66.247:8081/repository/maven-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
