@@ -1,6 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -17,8 +18,7 @@
     </organization>
 
     <properties>
-        <!-- Change Java version here -->
-        <jdk.version>17</jdk.version>
+        <jdk.version>11</jdk.version>
         <spring.version>5.1.2.RELEASE</spring.version>
         <junit.version>4.11</junit.version>
         <log4j.version>1.2.17</log4j.version>
@@ -45,18 +45,17 @@
         </dependency>
 
         <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>1.9.5</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- provided dependencies -->
-        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>1.9.5</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- compile dependencies -->
@@ -80,7 +79,15 @@
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
         </dependency>
-    </dependencies>
+        
+        <!-- provided dependencies -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>    
+    </dependencies>    
 
     <distributionManagement>
         <repository>
@@ -88,6 +95,7 @@
             <name>SolaviseTech Releases Nexus Repository</name>
             <url>http://3.92.66.247:8081/repository/maven-releases/</url>
         </repository>
+        
         <snapshotRepository>
             <id>nexus</id>
             <name>SolaviseTech Snapshot Nexus Repository </name>
@@ -97,11 +105,12 @@
 
     <build>
         <finalName>tesla</finalName>
+        
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version> <!-- updated -->
+                <version>3.3</version>
                 <configuration>
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
@@ -111,7 +120,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.2</version> <!-- added and upgraded -->
+                <version>3.3.2</version>
             </plugin>
 
             <plugin>
